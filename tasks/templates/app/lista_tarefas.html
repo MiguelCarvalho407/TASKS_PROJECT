@@ -1,0 +1,150 @@
+{% extends 'app/app.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="task-title">LISTA DE TAREFAS</h1>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Data final</th>
+            <th scope="col">Status</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td>{{ task.category }}</td>
+            <td>{{ task.due_date }}</td>
+            <td class="status-{{ task.status|lower }}">{{ task.status }}</td>
+            <td>
+                <a class="btn-action btn-edit" href="{% url 'editartarefa' task.id %}">Editar</a>
+                <a class="btn-action btn-delete" href="{% url 'apagartarefa' task.id %}">Apagar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'criartarefa' %}" class="btn-create-task">Criar tarefa</a>
+
+
+
+<style>
+  /* Estilo para o título da página */
+  .task-title {
+      text-align: center;
+      color: #4A90E2;
+      margin-bottom: 20px;
+      font-family: 'Arial', sans-serif;
+  }
+  
+  /* Estilo da tabela */
+  .table {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-family: 'Arial', sans-serif;
+  }
+  
+  .table th, .table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+  
+  .table thead {
+      background-color: #4A90E2;
+      color: white;
+  }
+  
+  .table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+  }
+  
+  .table tbody tr:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+  }
+  
+  /* Status colorido */
+  .status-pendente {
+      color: #FFA500;
+  }
+  
+  .status-concluido {
+      color: #28A745;
+  }
+  
+  .status-atrasado {
+      color: #DC3545;
+  }
+  
+  /* Botões de ação */
+  .btn-action {
+      padding: 5px 10px;
+      margin-right: 5px;
+      font-size: 14px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      border: none;
+      color: white;
+      text-decoration: none; /* Remove o underline dos links */
+  }
+  
+  /* Remove o sublinhado em todos os estados */
+  .btn-action, .btn-action:hover, .btn-action:focus, .btn-action:visited, 
+  .btn-create-task, .btn-create-task:hover, .btn-create-task:focus, .btn-create-task:visited {
+      text-decoration: none;
+      color: white; /* Garante que o texto continue branco em todos os estados */
+  }
+  
+  .btn-edit {
+      background-color: #17A2B8;
+  }
+  
+  .btn-edit:hover {
+      background-color: #138496;
+  }
+  
+  .btn-delete {
+      background-color: #DC3545;
+  }
+  
+  .btn-delete:hover {
+      background-color: #C82333;
+  }
+  
+  /* Remove o azul ao focar nos botões */
+  .btn-action:focus, .btn-create-task:focus {
+      outline: none;
+  }
+  
+  /* Botão criar tarefa */
+  .btn-create-task {
+      display: block;
+      width: 150px;
+      text-align: center;
+      padding: 10px;
+      margin: 20px auto;
+      background-color: #28A745;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+  }
+  
+  .btn-create-task:hover {
+      background-color: #218838;
+  }
+</style>
+  
+  
+{% endblock %}

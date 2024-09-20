@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}" type="image/x-icon">
+    <title>Task Manager</title>
+</head>
+<body>
+    
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'signup' %}">CRIAR CONTA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+        </li>
+    </ul>
+    
+    {% block content %}
+    <h1 class="h1-base">Bem vindo</h1>
+    <h4 class="h4-base">Ao Task Manager, cria e gerencia as tua tarefas.</h4>
+    {% endblock %}
+</body>
+</html>

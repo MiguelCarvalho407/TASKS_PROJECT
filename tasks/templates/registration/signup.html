@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="signup-page">
+    <div class="signup-container">
+        <h1>Criar Conta</h1>
+        <form method="post" class="signup-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-signup">Criar conta</button>
+        </form>
+    </div>
+</main>
+
+<style>
+    /* Estilos gerais */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container principal */
+    .signup-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .signup-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: left; /* Alinhando o conteúdo do formulário à esquerda */
+    }
+
+    h1 {
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    /* Formulário */
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .signup-form label {
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .signup-form input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .signup-form input:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    /* Botão */
+    .btn-signup {
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-signup:hover {
+        background-color: #0056b3;
+    }
+
+</style>
+
+{% endblock %}

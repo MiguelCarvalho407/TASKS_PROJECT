@@ -1,0 +1,67 @@
+{% extends 'app/app.html' %}
+
+{% block content %}
+
+    <h2 class="delete-warning">Tem certeza que deseja excluir esta tarefa?</h2>
+
+    <form method="post" class="delete-form">
+        {% csrf_token %}
+        <button type="submit" class="btn-confirm">Sim</button>
+        <a href="{% url 'listatarefas' %}" class="btn-cancel">Cancelar</a>
+    </form>
+
+
+<style>
+/* Centraliza o conteúdo da página */
+.delete-warning {
+    text-align: center;
+    color: #DC3545; /* Cor vermelha para dar ênfase ao perigo de exclusão */
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Estiliza o formulário de exclusão */
+.delete-form {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os botões */
+}
+
+/* Botão de confirmação (Sim) */
+.btn-confirm {
+    padding: 10px 20px;
+    background-color: #DC3545; /* Vermelho para indicar ação crítica */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-confirm:hover {
+    background-color: #C82333; /* Um tom mais escuro de vermelho no hover */
+}
+
+/* Botão de cancelar (link) */
+.btn-cancel {
+    padding: 10px 20px;
+    background-color: #6C757D; /* Cinza para ação de cancelamento */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #5A6268; /* Um tom mais escuro de cinza no hover */
+}
+
+/* Remove o sublinhado e mantém a cor dos links */
+.btn-cancel:focus, .btn-cancel:visited {
+    text-decoration: none;
+    color: white;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'app/app.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main-criar-tarefa">
+    <div class="container-criar-tarefa">
+        <h2>Editar Tarefa</h2>
+        <form method="post" class="form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id-title">Título:</label>
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                <label for="id-description">Descrição:</label>
+                {{ form.description }}
+            </div>
+            <div class="form-group">
+                <label for="id-due-date">Data de entrega:</label>
+                {{ form.due_date }}
+            </div>
+            <div class="form-group">
+                <label for="id-status">Estado:</label>
+                {{ form.status }}
+            </div>
+            <div class="form-group">
+                <label for="id-category">Categoria:</label>
+                {{ form.category }}
+            </div>
+            <button type="submit" class="btn-submit">Guardar alterações</button>
+        </form>
+    </div>
+</main>
+
+<style>
+    /* Estilos gerais */
+    body {
+        background-color: #eee;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Container principal */
+    .main-criar-tarefa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container-criar-tarefa {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+    }
+
+    /* Formulário */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+        border-color: black;
+        outline: none;
+    }
+
+    .btn-submit {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+{% endblock %}
