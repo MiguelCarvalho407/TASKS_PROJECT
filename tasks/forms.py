@@ -50,3 +50,13 @@ class EditarTarefaForm(forms.Form):
         fields = ['title', 'description', 'status', 'due_date', 'category']
 
 
+class CriarCategoriaForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = ['name']
+
+
+class MarcarConcluidoForm(forms.Form):
+    class Meta:
+        model = Task
+        fields = ['category']

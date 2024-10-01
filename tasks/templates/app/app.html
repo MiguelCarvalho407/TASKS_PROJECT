@@ -12,11 +12,8 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'app' %}">Tasks Manager</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a href="{% url 'app' %}"><img src="{% static 'favicon/favicon.png' %}" style="height: 40px;"></a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -29,7 +26,7 @@
     </nav>
 
     {% block content %}
-    <h3 class="h1-base">Bem vindo, {{user.username}}</h3>
+    <h3 class="h1-base">Bem vindo, {{user.username}}!</h3>
     <h4 class="h4-base">Cria, edita e gere as tuas tarefas aqui!</h4>
     {% endblock %}
     

@@ -12,18 +12,27 @@
 </head>
 <body>
     
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" href="{% url 'signup' %}">CRIAR CONTA</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="{% static 'favicon/favicon.png' %}" style="height: 40px;">
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'base' %}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
         </li>
-    </ul>
+        <li class="nav-item"></li>
+          <a class="nav-link" href="{% url 'signup' %}">Criar Conta</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
     
     {% block content %}
-    <h1 class="h1-base">Bem vindo</h1>
-    <h4 class="h4-base">Ao Task Manager, cria e gerencia as tua tarefas.</h4>
+    <h1 class="h1-base">Bem vindo!</h1>
+    <h4 class="h4-base">TaskManager, cria e gerencia as tua tarefas.</h4>
     {% endblock %}
 </body>
 </html>

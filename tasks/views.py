@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import SingupForm, LoginForm, CriarTarefaForm, EditarTarefaForm
+from .forms import SingupForm, LoginForm, CriarTarefaForm, EditarTarefaForm, CriarCategoriaForm, MarcarConcluidoForm
 from .models import Utilizadores, Task, Category
+from django.contrib import messages
 
 def base(request):
     return render(request, 'base.html')
@@ -63,6 +64,8 @@ def criartarefa(request):
             task = form.save(commit=False)
             task.user = request.user
             task.save()
+
+            messages.success(request, "Tarefa criada com sucesso!")
             return redirect('listatarefas')
     else:
         form = CriarTarefaForm()
