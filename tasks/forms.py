@@ -54,9 +54,3 @@ class CriarCategoriaForm(forms.ModelForm):
     class Meta:
         model = Category
         fields = ['name']
-
-
-class MarcarConcluidoForm(forms.Form):
-    class Meta:
-        model = Task
-        fields = ['category']

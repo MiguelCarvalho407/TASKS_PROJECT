@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import SingupForm, LoginForm, CriarTarefaForm, EditarTarefaForm, CriarCategoriaForm, MarcarConcluidoForm
-from .models import Utilizadores, Task, Category
+from .forms import SingupForm, LoginForm, CriarTarefaForm
+from .models import Utilizadores, Task
 from django.contrib import messages
 
 def base(request):
