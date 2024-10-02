@@ -52,84 +52,84 @@
 
 <style>
   .tasks-list {
-            text-align: center;
-            margin-top: 50px;
-        }
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    .msg-success {
+        margin: 30px auto;
+        border: 1px solid rgb(195, 230, 203);
+        border-radius: 5px;
+        width: 40%;
+        background-color: rgb(195, 230, 203);
+        height: 50px;
+        padding: 15px;
+        text-align: center;
+        color: rgb(21, 87, 36);
+    }
 
-        .msg-success {
-            margin: 30px auto;
-            border: 1px solid rgb(195, 230, 203);
-            border-radius: 5px;
-            width: 40%;
-            background-color: rgb(195, 230, 203);
-            height: 50px;
-            padding: 15px;
-            text-align: center;
-            color: rgb(21, 87, 36);
-        }
+    .tasks-table {
+        width: 70%;
+        margin: auto;
+        border-collapse: collapse;
+    }
 
-        .tasks-table {
-            width: 70%;
-            margin: auto;
-            border-collapse: collapse;
-        }
+    .tasks-table th, .tasks-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
 
-        .tasks-table th, .tasks-table td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
+    .table-thead {
+        background-color: rgb(50, 56, 62);
+        color: #fff;
+    }
 
-        .table-thead {
-            background-color: rgb(50, 56, 62);
-            color: #fff;
-        }
+    .btn-editar {
+        border: none;
+        background-color: rgb(0, 123, 255);
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+    }
 
-        .btn-editar {
-            border: none;
-            background-color: rgb(0, 123, 255);
-            color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-        }
+    .btn-apagar {
+        border: none;
+        background-color: rgb(220, 53, 69);
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+    }
 
-        .btn-apagar {
-            border: none;
-            background-color: rgb(220, 53, 69);
-            color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-        }
+    .btn-check{
+        border: none;
+        background-color: rgb(40, 167, 69);
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+    }
 
-        .btn-check{
-            border: none;
-            background-color: rgb(40, 167, 69);
-            color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-        }
+    .btns{
+        margin-top: 20px;
+        text-align: center;
+    }
 
-        .btns{
-            margin-top: 20px;
-            text-align: center;
-        }
+    .btn-criar-tarefa{
+        background-color: #17a2b8;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        color: #fff;
+        font-size: 16px;
+    }
 
-        .btn-criar-tarefa{
-            background-color: #17a2b8;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            color: #fff;
-            font-size: 16px;
-        }
-
-        .descricao {
-            max-width: 200px;
-            word-wrap: break-word;
-            white-space: normal;
-            overflow-wrap: break-word;
-            text-align: left;
-        }
+    .descricao {
+        max-width: 200px;
+        word-wrap: break-word;
+        white-space: normal;
+        overflow-wrap: break-word;
+        text-align: left;
+    }
 
 </style>
 
@@ -143,7 +143,7 @@
             
             setTimeout(function() {
                 messageContainer.style.display = 'none';
-            }, 4000);
+            }, 2000);
         }
     };
 

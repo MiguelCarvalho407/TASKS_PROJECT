@@ -8,6 +8,9 @@ from django.contrib import messages
 def base(request):
     return render(request, 'base.html')
 
+def custom_404(request, exception):
+    return render(request, 'error/404.html', status=404)
+
 # ================================================== #
 
 def signup_view(request):

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h2 class="delete-warning">Tem certeza que deseja excluir esta tarefa?</h2>
+    <h2 class="delete-warning">Tens a certeza que desejas apagar esta tarefa?</h2>
 
     <form method="post" class="delete-form">
         {% csrf_token %}
@@ -12,56 +12,52 @@
 
 
 <style>
-/* Centraliza o conteúdo da página */
-.delete-warning {
-    text-align: center;
-    color: #DC3545; /* Cor vermelha para dar ênfase ao perigo de exclusão */
-    font-family: 'Arial', sans-serif;
-    margin-bottom: 20px;
-}
+    .delete-warning {
+        margin-top: 20%;
+        text-align: center;
+        color: #DC3545;
+        font-family: 'Arial', sans-serif;
+        margin-bottom: 20px;
+    }
 
-/* Estiliza o formulário de exclusão */
-.delete-form {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espaço entre os botões */
-}
+    .delete-form {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
 
-/* Botão de confirmação (Sim) */
-.btn-confirm {
-    padding: 10px 20px;
-    background-color: #DC3545; /* Vermelho para indicar ação crítica */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+    .btn-confirm {
+        padding: 10px 20px;
+        background-color: #DC3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
 
-.btn-confirm:hover {
-    background-color: #C82333; /* Um tom mais escuro de vermelho no hover */
-}
+    .btn-confirm:hover {
+        background-color: #C82333;
+    }
 
-/* Botão de cancelar (link) */
-.btn-cancel {
-    padding: 10px 20px;
-    background-color: #6C757D; /* Cinza para ação de cancelamento */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+    .btn-cancel {
+        padding: 10px 20px;
+        background-color: #6C757D;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
 
-.btn-cancel:hover {
-    background-color: #5A6268; /* Um tom mais escuro de cinza no hover */
-}
+    .btn-cancel:hover {
+        background-color: #5A6268;
+    }
 
-/* Remove o sublinhado e mantém a cor dos links */
-.btn-cancel:focus, .btn-cancel:visited {
-    text-decoration: none;
-    color: white;
-}
+    .btn-cancel:focus, .btn-cancel:visited {
+        text-decoration: none;
+        color: white;
+    }
 </style>
 {% endblock %}
